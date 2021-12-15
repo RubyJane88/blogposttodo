@@ -118,3 +118,37 @@ app.clientUrl=${CLIENT_URL}
 #### Adding Controller (no-auth yet)
 
 - Create a new package inside the project and name it: UserController.java.
+
+
+###RUN the application to check if you've successfully sending the endpoint. In the localhost, an empty array should appear 
+
+since we don't have data yet. 
+
+#### Connecting to Postgres
+
+- For now, we comment out the h2 file in the application.properties since we alreayd a POF when we're able to send an endpoint.
+- In the application.xml, copy the text below:
+
+```
+spring.main.allow-bean-definition-overriding=true
+# jdbc:postgresql://localhost:5432/springDevDb for the value in environment variable DATABASE_URL
+spring.datasource.url=${DATABASE_URL}
+# postgres for the value in environment variable DATABASE_USERNAME
+spring.datasource.username=${DATABASE_USERNAME}
+#spring.datasource.username=
+# pass for the value in environment variable DATABASE_PASSWORD
+spring.datasource.password=${DATABASE_PASSWORD}
+#spring.datasource.password=
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.properties.hibernate.format_sql=true
+```
+
+NOTE:
+
+Navigate to -> Run -> EditConfigurations -> Click on $ of Working Directory and browse to your root package or working directory of your app.
+
+Make sure your Docker client is running. 
+
+Open the PGAdmin and make sure you've created a database. Take note of your database name and password.

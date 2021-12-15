@@ -31,14 +31,13 @@ public class UserEntity {
     @NotBlank(message = "Email cannot be blank")
     private String email;
 
-//    private Integer AddressId;
-//    private AddressEntity address;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "address_id", referencedColumnName = "id")
+    private AddressEntity address;
 
-//   private Integer GeoId;
-//   private GeoEntity geo;
-//
-//   private Integer CompanyId;
-//   private CompanyEntity company;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "company_id", referencedColumnName = "id")
+   private CompanyEntity company;
 
    @NotBlank(message = "Phone cannot be blank")
    private String phone;

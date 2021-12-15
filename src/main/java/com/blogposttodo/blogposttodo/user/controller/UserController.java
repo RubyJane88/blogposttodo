@@ -28,7 +28,6 @@ public class UserController {
           var userList = StreamSupport
                   .stream(userService.findAllUser().spliterator(), false).toList();
 
-
           return userList
                   .stream()
                   .map(this::convertToDto)
