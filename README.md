@@ -119,10 +119,9 @@ app.clientUrl=${CLIENT_URL}
 
 - Create a new package inside the project and name it: UserController.java.
 
+###RUN the application to check if you've successfully sending the endpoint. In the localhost, an empty array should appear
 
-###RUN the application to check if you've successfully sending the endpoint. In the localhost, an empty array should appear 
-
-since we don't have data yet. 
+since we don't have data yet.
 
 #### Connecting to Postgres
 
@@ -149,6 +148,11 @@ NOTE:
 
 Navigate to -> Run -> EditConfigurations -> Click on $ of Working Directory and browse to your root package or working directory of your app.
 
-Make sure your Docker client is running. 
+Make sure your Docker client is running.
 
 Open the PGAdmin and make sure you've created a database. Take note of your database name and password.
+
+
+### Seeding the Database
+
+- In the root project, create a new file and name it DataLoader
