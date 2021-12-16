@@ -1,12 +1,8 @@
 package com.blogposttodo.blogposttodo.user.controller;
 
-import com.blogposttodo.blogposttodo.user.entity.AddressEntity;
-import com.blogposttodo.blogposttodo.user.entity.CompanyEntity;
-import com.blogposttodo.blogposttodo.user.entity.UserEntity;
+import com.blogposttodo.blogposttodo.user.dto.FlattenUserDto;
 import com.blogposttodo.blogposttodo.user.service.UserService;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
@@ -17,8 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
-import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
 @Log4j2
@@ -33,7 +27,7 @@ public class FlattenUserController {
 
     @GetMapping
     public ResponseEntity<List<FlattenUserDto>> getAllFlattenUsers() {
-        var users = userService.findAllFlattenUser();
+        var users = userService.findAllUser();
 
         var flattenUsers = new ArrayList<FlattenUserDto>();
 
@@ -64,23 +58,3 @@ public class FlattenUserController {
     }
 }
 
-@Getter
-@Setter
-class FlattenUserDto {
-    private UUID id;
-    private String name;
-    private String userName; // username
-    private String email;
-    private String street;
-    private String suite;
-    private String city;
-    private String state;
-    private String zipcode;
-    private String phone;
-    private String website;
-    private String lat;
-    private String lng;
-    private String companyName;
-    private String catchPhrase;
-    private String bs;
-}

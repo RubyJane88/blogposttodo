@@ -22,10 +22,6 @@ public class UserService implements UserContract {
         return repo.findAll();
     }
 
-    public Iterable<UserEntity> findAllFlattenUser() {
-        return repo.findAll();
-    }
-
     @Override
     public UserEntity findUserById(UUID id) {
         return findOrThrow(id);
