@@ -6,7 +6,10 @@ import com.blogposttodo.blogposttodo.user.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 @AllArgsConstructor
 @Service
@@ -19,6 +22,10 @@ public class UserService implements UserContract {
         return repo.findAll();
     }
 
+    public Iterable<UserEntity> findAllFlattenUser() {
+        return repo.findAll();
+    }
+
     @Override
     public UserEntity findUserById(UUID id) {
         return findOrThrow(id);
@@ -26,7 +33,7 @@ public class UserService implements UserContract {
 
     private UserEntity findOrThrow(final UUID id) {
         return repo.findById(id)
-                   .orElseThrow(() -> new IllegalArgumentException("User by id" + id + "not found"));
+                .orElseThrow(() -> new IllegalArgumentException("User by id" + id + "not found"));
     }
 
     @Override
@@ -43,6 +50,6 @@ public class UserService implements UserContract {
 
     @Override
     public void deleteUser(UUID id) {
-      repo.deleteById(id);
+        repo.deleteById(id);
     }
 }

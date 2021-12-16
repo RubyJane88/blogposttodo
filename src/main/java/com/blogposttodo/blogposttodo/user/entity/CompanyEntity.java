@@ -23,4 +23,7 @@ public class CompanyEntity {
     private String catchPhrase;
     private String bs;
 
+
+
+
 }
