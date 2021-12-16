@@ -27,32 +27,29 @@ public class FlattenUserController {
 
     @GetMapping
     public ResponseEntity<List<FlattenUserDto>> getAllFlattenUsers() {
-        var users = userService.findAllUser();
-
         var flattenUsers = new ArrayList<FlattenUserDto>();
 
-   StreamSupport
-                .stream(users.spliterator(), false)
-                .forEach(user -> {
-                    var flattenUserDto = new FlattenUserDto();
-                    flattenUserDto.setId(user.getId());
-                    flattenUserDto.setName(user.getName());
-                    flattenUserDto.setUserName(user.getUserName());
-                    flattenUserDto.setEmail(user.getEmail());
-                    flattenUserDto.setPhone(user.getPhone());
-                    flattenUserDto.setWebsite(user.getWebsite());
-                    flattenUserDto.setStreet(user.getAddress().getStreet());
-                    flattenUserDto.setSuite(user.getAddress().getSuite());
-                    flattenUserDto.setCity(user.getAddress().getCity());
-                    flattenUserDto.setZipcode(user.getAddress().getZipcode());
-                    flattenUserDto.setLat(user.getAddress().getGeo().getLat());
-                    flattenUserDto.setLng(user.getAddress().getGeo().getLng());
-                    flattenUserDto.setCompanyName(user.getCompany().getName());
-                    flattenUserDto.setCatchPhrase(user.getCompany().getCatchPhrase());
-                    flattenUserDto.setBs(user.getCompany().getBs());
+        userService.findAllUser().forEach(user -> {
+            var flattenUserDto = new FlattenUserDto(); // create an instance here
 
-                    flattenUsers.add(flattenUserDto);
-                });
+            flattenUserDto.setId(user.getId());
+            flattenUserDto.setName(user.getName());
+            flattenUserDto.setUserName(user.getUserName());
+            flattenUserDto.setEmail(user.getEmail());
+            flattenUserDto.setPhone(user.getPhone());
+            flattenUserDto.setWebsite(user.getWebsite());
+            flattenUserDto.setStreet(user.getAddress().getStreet());
+            flattenUserDto.setSuite(user.getAddress().getSuite());
+            flattenUserDto.setCity(user.getAddress().getCity());
+            flattenUserDto.setZipcode(user.getAddress().getZipcode());
+            flattenUserDto.setLat(user.getAddress().getGeo().getLat());
+            flattenUserDto.setLng(user.getAddress().getGeo().getLng());
+            flattenUserDto.setCompanyName(user.getCompany().getName());
+            flattenUserDto.setCatchPhrase(user.getCompany().getCatchPhrase());
+            flattenUserDto.setBs(user.getCompany().getBs());
+
+            flattenUsers.add(flattenUserDto); // push the instance after manually mapping everything
+        });
 
         return new ResponseEntity<>(flattenUsers, HttpStatus.OK);
     }

@@ -152,7 +152,11 @@ Make sure your Docker client is running.
 
 Open the PGAdmin and make sure you've created a database. Take note of your database name and password.
 
-
-### Seeding the Database
+#### Seeding the Database (for FOC)
 
 - In the root project, create a new file and name it DataLoader
+
+
+#### Automated Testing
+
+- Add the Javafaker dependency in the pom.xml
