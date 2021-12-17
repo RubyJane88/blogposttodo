@@ -19,7 +19,6 @@ public class AddressEntity {
     @GeneratedValue(strategy = javax.persistence.GenerationType.AUTO, generator = "UUID")
     @Column(nullable = false, updatable = false)
     private UUID id;
-
     private String street;
     private String suite;
     private String city;

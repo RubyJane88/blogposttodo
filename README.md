@@ -160,3 +160,28 @@ Open the PGAdmin and make sure you've created a database. Take note of your data
 #### Automated Testing
 
 - Add the Javafaker dependency in the pom.xml
+- Inside the Test package -> create a new package and name it resources
+- Inside the resource package -> create a new file named application.properties. Copy paste the code below:
+
+```
+
+# application properties for integration tests
+springdoc.swagger-ui.enabled=false
+spring.main.allow-bean-definition-overriding=true
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=password
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+app.clientUrl=http://localhost:4200
+app.jwtSecret=Yn2kjibddFAWtnPJ2AFlL8WXmohJMCvigQggaEypa5E=
+app.version=1.0.0
+app.name=SuperheroesApplication
+app.description=just another Spring Boot REST API application
+```
+
+
+- Inside the Test package -> and inside your root project test package, create a new package and name it user. (test/java/com.blogposttodo.blogposttodo/user)
+- Inside the user package -> create two folders: controller and service
+- In the controller -> add a new file and name it userControllerTest
+- In the service -> add a new file and name it userServiceTest
