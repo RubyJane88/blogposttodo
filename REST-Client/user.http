@@ -1,0 +1,71 @@
+###
+GET http://localhost:8080/api/v1/users
+Accept: application/json
+
+###
+DELETE http://localhost:8080/api/v1/users/9c0b94d2-ab96-4c49-85ad-5195129febc0
+Accept: application/json
+
+###
+POST http://localhost:8080/api/v1/users
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": "9c0b94d2-ab96-4c49-85ad-5195128febc0",
+  "name": "The Witcher 20",
+  "userName": "The Witcher 20",
+  "email": "witcher20@gmail.com",
+  "address": {
+    "street": "2",
+    "suite": "A",
+    "city": "Sydney",
+    "state": "NSW",
+    "zipcode": "2000",
+    "geo": {
+      "lat": "-33.865",
+      "lng": "151.2086"
+    }
+  },
+  "phone": "238473824",
+  "website": "jd.io",
+  "company": {
+    "name": "Jabee",
+    "catchPhrase": "transparent pricing",
+    "bs": "real-time info"
+  }
+}
+
+###
+PUT http://localhost:8080/api/v1/users/e2ea6d5f-e0b9-414d-b125-a4ee70e42ca4
+content-type: application/json
+Accept: application/json
+
+{
+  "id": "e2ea6d5f-e0b9-414d-b125-a4ee70e42ca4",
+  "name": "The Witcher 5.1",
+  "userName": "The Witcher 5",
+  "email": "witcher5@gmail.com",
+  "address": {
+    "id": "79658022-e2ba-48d5-99a7-7e54586781b7",
+    "street": "2",
+    "suite": "A",
+    "city": "Sydney",
+    "state": "NSW",
+    "zipcode": "2000",
+    "geo": {
+      "id": "c1221977-349a-45f4-808d-b1a022e99e2d",
+      "lat": "-33.865",
+      "lng": "151.2086"
+    }
+  },
+  "phone": "238473824",
+  "website": "jd.io",
+  "company": {
+    "id": "f596f046-a63b-48dd-a53f-5fbc78089e83",
+    "name": "Jabee",
+    "catchPhrase": "transparent pricing",
+    "bs": "real-time info"
+  }
+
+  }

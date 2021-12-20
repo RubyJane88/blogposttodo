@@ -5,24 +5,27 @@ import com.blogposttodo.blogposttodo.user.entity.CompanyEntity;
 import com.blogposttodo.blogposttodo.user.entity.GeoEntity;
 import com.blogposttodo.blogposttodo.user.entity.UserEntity;
 import com.blogposttodo.blogposttodo.user.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.util.UUID;
 
 @Component
-public class DataLoader implements CommandLineRunner {
+public class UserDataLoader implements CommandLineRunner {
 
-    @Autowired
-    UserRepository userRepository;
+    final UserRepository userRepository;
+
+    public UserDataLoader(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     @Override
     public void run(String... args) throws Exception {
-        loadData();
+        loadUserData();
     }
 
-    private void loadData() {
+    private void loadUserData() {
+        //
         if (userRepository.count() == 0) {
 
             var geo = new GeoEntity(UUID.randomUUID(), "37.769", "-122.446");
@@ -31,9 +34,12 @@ public class DataLoader implements CommandLineRunner {
 
             var user = new UserEntity(UUID.randomUUID(), "Leane", "Bret", "since@gmail.com", address, company, "123456789", "yahoo.com");
             userRepository.save(user);
+
+
         }
         System.out.println(userRepository.count());
 
     }
+
 }
 

@@ -156,7 +156,6 @@ Open the PGAdmin and make sure you've created a database. Take note of your data
 
 - In the root project, create a new file and name it DataLoader
 
-
 #### Automated Testing
 
 - Add the Javafaker dependency in the pom.xml
@@ -180,8 +179,34 @@ app.name=SuperheroesApplication
 app.description=just another Spring Boot REST API application
 ```
 
-
 - Inside the Test package -> and inside your root project test package, create a new package and name it user. (test/java/com.blogposttodo.blogposttodo/user)
 - Inside the user package -> create two folders: controller and service
 - In the controller -> add a new file and name it userControllerTest
 - In the service -> add a new file and name it userServiceTest
+
+###REST-Client for Postman/Insomnia replacement
+
+- Create REST-Client folder in the root directory
+- Add user.http file
+- send/trigger GET http://localhost:8080/api/v1/users  -> [] empty array should be be the response
+- send/trigger GET BY ID: http://localhost:8080/api/v1/users/{id}
+- send/trigger POST http://localhost:8080/api/v1/users
+- send/trigger PUT http://localhost:8080/api/v1/users/{id}
+
+##SWAGGER UI or OPEN API
+
+Add springdoc-openapi-ui and springdoc-openapi-data-rest in the pom.xml
+
+Write SwaggerConfig configuration inside the config package for custom Swagger UI
+
+Update the application.properties with app.version, app.name, and app.description
+
+Run the app and then go to this link: 
+
+* [http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/](http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/)
+
+
+In the Edit Configugations: 
+
+
+###JWT
