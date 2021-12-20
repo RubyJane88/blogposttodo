@@ -38,6 +38,8 @@ public class TodoService implements TodoContract {
 
     @Override
     public void updateTodo(UUID id, TodoEntity todo) {
+          findOrThrow(id);
+          todoRepository.save(todo);
 
     }
 

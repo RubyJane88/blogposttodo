@@ -1,0 +1,30 @@
+###
+GET http://localhost:8080/api/v1/photos
+accept: application/json
+
+###
+DELETE http://localhost:8080/api/v1/photos/84a0f492-3118-4d83-a49f-8b8865dba81f
+accept: application/json
+
+###
+POST http://localhost:8080/api/v1/photos
+accept: application/json
+content-type: application/json
+
+{
+  "title": "My photo title",
+  "url": "http://localhost:8080/api/v1/photos/84a0f492-3118-4d83-a49f-8b8865dba81f",
+  "thumbnailUrl": "http://localhost:8080/api/v1/photos/84a0f492-3118-4d83-a49f-8b8865dba81f/thumbnail"
+}
+
+###
+PUT http://localhost:8080/api/v1/photos/9e8bef93-fa04-4b11-a127-d8abab490535
+Content-Type: application/json
+
+{
+  "id": "9e8bef93-fa04-4b11-a127-d8abab490535",
+  "title": "My photo title part 2",
+  "url": "http://localhost:8080/api/v1/photos/84a0f492-3118-4d83-a49f-8b8865dba81f",
+  "thumbnailUrl": "http://localhost:8080/api/v1/photos/84a0f492-3118-4d83-a49f-8b8865dba81f/thumbnail"
+}
+

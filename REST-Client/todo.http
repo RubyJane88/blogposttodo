@@ -18,10 +18,11 @@ accept: application/json
 }
 
 ###
-PUT http://localhost:8080/api/v1/todos/08fb259e-6953-4347-b28f-90010f4288e7
+PUT http://localhost:8080/api/v1/todos/32a90ffb-3f3d-436f-b0cf-0f8b41a3c5ed
 content-type: application/json
 
 {
-  "title": "TestTodo Title Updated",
+  "id": "32a90ffb-3f3d-436f-b0cf-0f8b41a3c5ed",
+  "title": "Give a talk about REST",
   "completed": false
 }

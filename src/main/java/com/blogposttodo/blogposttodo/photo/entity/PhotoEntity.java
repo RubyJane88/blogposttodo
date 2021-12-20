@@ -1,10 +1,13 @@
 package com.blogposttodo.blogposttodo.photo.entity;
 
 
+import com.blogposttodo.blogposttodo.album.entity.AlbumEntity;
 import lombok.*;
+import org.hibernate.Hibernate;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.util.Objects;
 import java.util.UUID;
 
 @Getter
@@ -30,6 +33,24 @@ public class PhotoEntity {
     private String url;
     private String thumbnailUrl;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "album_id", referencedColumnName = "id")
+    private AlbumEntity albumEntity;
 
+
+    /*These 2 methods, equals and hashCode, below are required if @Data is not used*/
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        PhotoEntity that = (PhotoEntity) o;
+        return id != null && Objects.equals(id, that.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
+    }
 
 }
