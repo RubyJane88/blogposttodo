@@ -18,4 +18,6 @@ public class CommentDto {
     @NotBlank(message = "email is mandatory")
     private String email;
     private String body;
+
+    private UUID postId;
 }

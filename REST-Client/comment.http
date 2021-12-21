@@ -1,0 +1,31 @@
+###
+GET http://localhost:8080/api/v1/comments
+accept: application/json
+
+###
+DELETE http://localhost:8080/api/v1/comments/05520920-82e1-4fc5-8012-e2dd4aa98924
+accept: application/json
+
+###
+POST http://localhost:8080/api/v1/comments/
+accept: application/json
+content-type: application/json
+
+{
+  "name": "This is the SECOND UPDATED comment name",
+  "email": "arjaycee@yahoo.com",
+  "body": "This is the comment body",
+  "postId": "cef54ff0-89af-4af4-ad77-b3d503162bae"
+}
+
+###
+PUT http://localhost:8080/api/v1/comments/35763a3f-df3b-41c9-a6d3-020971319981
+content-type: application/json
+
+{
+  "id": "35763a3f-df3b-41c9-a6d3-020971319981",
+  "name": "This is the SECOND MOST UPDATED comment name",
+  "email": "arjaycee@yahoo.com",
+  "body": "This is the comment body",
+  "postId": "cef54ff0-89af-4af4-ad77-b3d503162bae"
+}
