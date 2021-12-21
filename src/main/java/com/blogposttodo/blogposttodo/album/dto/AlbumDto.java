@@ -14,5 +14,7 @@ public class AlbumDto {
     @NotNull(message = "Title is required")
     private String title;
 
+    private UUID userId;
+
 
 }

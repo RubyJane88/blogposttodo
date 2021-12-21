@@ -2,6 +2,7 @@ package com.blogposttodo.blogposttodo.album.entity;
 
 
 import com.blogposttodo.blogposttodo.user.entity.UserEntity;
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import lombok.*;
 
 import javax.persistence.*;
@@ -28,9 +29,11 @@ public class AlbumEntity {
     @NotNull(message = "Album name cannot be null")
     private String title;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id", referencedColumnName = "id")
-    private UserEntity userEntity;
+    @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false)
+    @JsonIdentityReference(alwaysAsId = true)
+    @NotNull
+    private UserEntity user;
 
 
 }

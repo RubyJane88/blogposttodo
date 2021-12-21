@@ -12,8 +12,8 @@ Content-Type: application/json
 accept: application/json
 
  {
-    "id": "a4a5d2c2-59da-4403-b5b7-67881f9f5996",
-    "title": "Something's Gotta Give"
+    "title": "Something's Gotta Give",
+   "userId": "d9abcd14-4295-45f0-bbbc-ae93005fb19e"
   }
 
 ###
