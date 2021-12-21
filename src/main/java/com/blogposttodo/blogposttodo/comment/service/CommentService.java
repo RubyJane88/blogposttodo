@@ -27,17 +27,18 @@ public class CommentService implements CommentContract {
 
     @Override
     public void deleteComment(UUID id) {
-
+       commentRepository.deleteById(id);
     }
 
     @Override
     public CommentEntity createComment(CommentEntity comment) {
-        return null;
+        return commentRepository.save(comment);
     }
 
     @Override
     public void updateComment(UUID id, CommentEntity comment) {
-
+        findOrThrow(id);
+        commentRepository.save(comment);
     }
 
     private CommentEntity findOrThrow(final UUID id) {

@@ -1,11 +1,18 @@
 package com.blogposttodo.blogposttodo.config.todo.entity;
 
+import com.blogposttodo.blogposttodo.user.entity.AddressEntity;
 import com.blogposttodo.blogposttodo.user.entity.UserEntity;
+import com.fasterxml.jackson.annotation.*;
 import lombok.*;
 import org.hibernate.Hibernate;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+import org.springframework.data.rest.core.annotation.RestResource;
 
 import javax.persistence.*;
+import javax.swing.text.View;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -30,9 +37,11 @@ public class TodoEntity {
     private String title;
     private Boolean completed;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id", referencedColumnName = "id")
-    private UserEntity userEntity;
+    @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false)
+    @JsonIdentityReference(alwaysAsId = true)
+    @NotNull
+    private UserEntity user;
 
 
     /*These 2 methods, equals and hashCode, below are required if @Data is not used*/
@@ -49,5 +58,6 @@ public class TodoEntity {
     public int hashCode() {
         return getClass().hashCode();
     }
+
 
 }

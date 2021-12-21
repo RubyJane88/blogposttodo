@@ -13,16 +13,19 @@ content-type: application/json
 accept: application/json
 
 {
-  "title": "Give a talk",
-  "completed": false
+  "title": "Give it a break part 2",
+  "completed": true,
+  "userId": "b094e30c-5db7-4f02-86f0-943c2d317f99"
+
 }
 
 ###
-PUT http://localhost:8080/api/v1/todos/32a90ffb-3f3d-436f-b0cf-0f8b41a3c5ed
+PUT http://localhost:8080/api/v1/todos/d44c3082-37da-4956-ba5f-234fef80ba5c
 content-type: application/json
 
 {
-  "id": "32a90ffb-3f3d-436f-b0cf-0f8b41a3c5ed",
-  "title": "Give a talk about REST",
-  "completed": false
+  "id": "d44c3082-37da-4956-ba5f-234fef80ba5c",
+  "title": "Give it a BREAK part 2",
+  "completed": false,
+  "userId": "b094e30c-5db7-4f02-86f0-943c2d317f99"
 }
