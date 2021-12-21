@@ -17,6 +17,8 @@ public class PhotoDto {
      private String url;
      private String thumbnailUrl;
 
+     private UUID albumId;
+
 
 
 

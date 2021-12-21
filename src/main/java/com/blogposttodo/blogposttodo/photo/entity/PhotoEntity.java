@@ -2,11 +2,13 @@ package com.blogposttodo.blogposttodo.photo.entity;
 
 
 import com.blogposttodo.blogposttodo.album.entity.AlbumEntity;
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import lombok.*;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -33,9 +35,11 @@ public class PhotoEntity {
     private String url;
     private String thumbnailUrl;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "album_id", referencedColumnName = "id")
-    private AlbumEntity albumEntity;
+    @ManyToOne
+    @JoinColumn(name = "album_id", referencedColumnName = "id", nullable = false)
+    @JsonIdentityReference(alwaysAsId = true)
+    @NotNull
+    private AlbumEntity album;
 
 
     /*These 2 methods, equals and hashCode, below are required if @Data is not used*/

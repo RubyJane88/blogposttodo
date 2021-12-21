@@ -12,9 +12,10 @@ accept: application/json
 content-type: application/json
 
 {
-  "title": "My photo title",
+  "title": "This is a photo title",
   "url": "http://localhost:8080/api/v1/photos/84a0f492-3118-4d83-a49f-8b8865dba81f",
-  "thumbnailUrl": "http://localhost:8080/api/v1/photos/84a0f492-3118-4d83-a49f-8b8865dba81f/thumbnail"
+  "thumbnailUrl": "http://localhost:8080/api/v1/photos/84a0f492-3118-4d83-a49f-8b8865dba81f/thumbnail",
+  "albumId": "8c917df2-f031-4bfb-96de-11b30bfe5f32"
 }
 
 ###
@@ -25,6 +26,8 @@ Content-Type: application/json
   "id": "9e8bef93-fa04-4b11-a127-d8abab490535",
   "title": "My photo title part 2",
   "url": "http://localhost:8080/api/v1/photos/84a0f492-3118-4d83-a49f-8b8865dba81f",
-  "thumbnailUrl": "http://localhost:8080/api/v1/photos/84a0f492-3118-4d83-a49f-8b8865dba81f/thumbnail"
+  "thumbnailUrl": "http://localhost:8080/api/v1/photos/84a0f492-3118-4d83-a49f-8b8865dba81f/thumbnail",
+  "albumId": "9d8c0d5a-ccc2-479f-bed2-8c217ff41099"
 }
+
 
