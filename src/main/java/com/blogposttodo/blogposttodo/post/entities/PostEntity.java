@@ -1,11 +1,13 @@
 package com.blogposttodo.blogposttodo.post.entities;
 
 import com.blogposttodo.blogposttodo.user.entity.UserEntity;
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import lombok.*;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -33,9 +35,11 @@ public class PostEntity {
     @NotBlank(message = "Content is required")
     private String body;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id", referencedColumnName = "id")
-    private UserEntity userEntity;
+    @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false)
+    @JsonIdentityReference(alwaysAsId = true)
+    @NotNull
+    private UserEntity user;
 
 
     /*These 2 methods, equals and hashCode, below are required if @Data is not used*/

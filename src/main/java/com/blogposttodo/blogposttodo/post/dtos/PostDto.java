@@ -1,6 +1,7 @@
 package com.blogposttodo.blogposttodo.post.dtos;
 
 
+import com.blogposttodo.blogposttodo.user.entity.UserEntity;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,4 +18,6 @@ public class PostDto {
 
     @NotBlank(message = "body is required")
     private String body;
+
+    private UUID userId;
 }
