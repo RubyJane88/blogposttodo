@@ -1,0 +1,43 @@
+###
+POST http://localhost:8080/authenticate
+Content-Type: application/json
+Accept: application/json
+
+{
+  "email": "user@webmaster.com",
+  "password": "admin"
+}
+
+###
+POST http://localhost:8080/register
+Content-Type: application/json
+Accept: application/json
+
+{
+  "email": "arjaycee@yahoo.com",
+  "mobileNumber": "8997829",
+  "password": "pass123"
+}
+
+###
+GET http://localhost:8080/api/v1/userslogin
+Content-Type: application/json
+Accept: application/json
+
+###
+DELETE http://localhost:8080/api/v1/userslogin/f7578d2f-d512-42c3-b3c5-8832fb2451ac
+accept: application/json
+
+
+###
+PUT http://localhost:8080/api/v1/userslogin/e09d852a-df12-4a0e-9ce1-be48fe23816a
+Content-Type: application/json
+Accept: application/json
+
+{
+
+"email": "admin3@webmaster.com",
+"mobileNumber": "83377889",
+"password": "Pass123"
+
+}

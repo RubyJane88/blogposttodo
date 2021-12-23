@@ -201,12 +201,22 @@ Write SwaggerConfig configuration inside the config package for custom Swagger U
 
 Update the application.properties with app.version, app.name, and app.description
 
-Run the app and then go to this link: 
+Run the app and then go to this link:
 
 * [http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/](http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/)
 
+In the Edit Configugations:
 
-In the Edit Configugations: 
+###USER LOGIN 
+
+_ Create a new package named userlogin in the com.blogposttodo.blogposttodo 
+
+_ Inside the userlogin package, create the following packges: entity, dto, repository, service, controller 
+
 
 
 ###JWT
+
+_ Create a jwt package under the .comblogposttodo.blogposttodo
+
+_ Create a models package under the jwt
