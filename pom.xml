@@ -134,6 +134,17 @@
 			<scope>runtime</scope>
 		</dependency>
 
+		<!-- Redis -->
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-redis</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+			<type>jar</type>
+		</dependency>
+
 		<!--Health Checks-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

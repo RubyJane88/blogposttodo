@@ -14,8 +14,8 @@ Content-Type: application/json
 Accept: application/json
 
 {
-  "email": "arjaycee@yahoo.com",
-  "mobileNumber": "8997829",
+  "email": "arjaycee_10@yahoo.com",
+  "mobileNumber": "8997729",
   "password": "pass123"
 }
 
