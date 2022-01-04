@@ -11,7 +11,7 @@ public interface UserContract {
 
     UserEntity createUser(UserEntity user);
 
-    void updateUser( UUID id, UserEntity user);
+    void updateUser(UUID id, UserEntity user);
 
     void deleteUser(UUID id);
 

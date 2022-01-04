@@ -14,7 +14,7 @@ Content-Type: application/json
 Accept: application/json
 
 {
-  "email": "arjaycee_10@yahoo.com",
+  "email": "arjaycee_11@yahoo.com",
   "mobileNumber": "8997729",
   "password": "pass123"
 }
@@ -35,9 +35,7 @@ Content-Type: application/json
 Accept: application/json
 
 {
-
-"email": "admin3@webmaster.com",
-"mobileNumber": "83377889",
-"password": "Pass123"
-
+  "email": "admin3@webmaster.com",
+  "mobileNumber": "83377889",
+  "password": "Pass123"
 }

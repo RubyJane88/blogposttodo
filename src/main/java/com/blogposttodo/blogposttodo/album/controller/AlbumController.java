@@ -36,16 +36,16 @@ public class AlbumController {
     }
 
     @GetMapping("/{id}")
-    public AlbumDto getAlbumById(@PathVariable("id")UUID id) {
+    public AlbumDto getAlbumById(@PathVariable("id") UUID id) {
         return convertToDto(albumService.findAlbumById(id));
     }
 
-   @DeleteMapping("/{id}")
-    public void deleteAlbumById(@PathVariable("id")UUID id) {
+    @DeleteMapping("/{id}")
+    public void deleteAlbumById(@PathVariable("id") UUID id) {
         albumService.deleteAlbum(id);
-   }
+    }
 
-   @PostMapping
+    @PostMapping
     public AlbumDto createAlbum(@RequestBody AlbumDto albumDto) {
         var albumEntity = convertToEntity(albumDto);
 
@@ -53,9 +53,10 @@ public class AlbumController {
     }
 
     @PutMapping("/{id}")
-    public void putAlbum (@PathVariable("id")UUID id, @RequestBody AlbumDto albumDto) {
+    public void putAlbum(@PathVariable("id") UUID id, @RequestBody AlbumDto albumDto) {
 
-        if (!id.equals(albumDto.getId()))  throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Id in path and body must match");
+        if (!id.equals(albumDto.getId()))
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Id in path and body must match");
 
         var albumEntity = convertToEntity(albumDto);
         albumService.updateAlbum(id, albumEntity);

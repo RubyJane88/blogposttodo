@@ -1,10 +1,11 @@
-package com.blogposttodo.blogposttodo.config.todo.service;
+package com.blogposttodo.blogposttodo.todo.service;
 
 
-import com.blogposttodo.blogposttodo.config.todo.entity.TodoEntity;
+import com.blogposttodo.blogposttodo.todo.entity.TodoEntity;
 import com.blogposttodo.blogposttodo.exception.NotFoundException;
-import com.blogposttodo.blogposttodo.config.todo.contract.TodoContract;
-import com.blogposttodo.blogposttodo.config.todo.repository.TodoRepository;
+import com.blogposttodo.blogposttodo.todo.contract.TodoContract;
+import com.blogposttodo.blogposttodo.todo.repository.TodoRepository;
+import com.blogposttodo.blogposttodo.todo.repository.TodoRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -33,17 +34,17 @@ public class TodoService implements TodoContract {
 
     @Override
     public void deleteTodo(UUID id) {
-       todoRepository.deleteById(id);
+        todoRepository.deleteById(id);
     }
 
     @Override
     public void updateTodo(UUID id, TodoEntity todo) {
-          findOrThrow(id);
-          todoRepository.save(todo);
+        findOrThrow(id);
+        todoRepository.save(todo);
 
     }
 
-    private TodoEntity findOrThrow (final UUID id) {
+    private TodoEntity findOrThrow(final UUID id) {
         return todoRepository
                 .findById(id)
                 .orElseThrow(

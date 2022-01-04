@@ -1,0 +1,29 @@
+[
+  {
+    "id": "cd76a25f-dfc5-48ce-866a-4ab7a331e0cb",
+    "title": "synthesize B2B initiatives",
+    "completed": true,
+    "user": {
+      "name": "Flemming Samper",
+      "email": "fsamperj@google.com.hk",
+      "address": {
+        "street": "21232 Farwell Drive",
+        "suite": "2",
+        "city": "Kota Kinabalu",
+        "state": "Sabah",
+        "zipcode": "88998",
+        "geo": {
+          "latitude": 5.9840985,
+          "longitude": 116.0761121
+        }
+      },
+      "phone": "126-677-9693",
+      "website": "https://wufoo.com/posuere/cubilia/curae/donec/pharetra/magna.png?dolor=et&quis=eros&odio=vestibulum&consequat=ac&varius=est&integer=lacinia&ac=nisi",
+      "company": {
+        "name": "Kwideo",
+        "catchphrase": "aggregate turn-key channels",
+        "bs": "expedite killer systems"
+      }
+    }
+  }
+]

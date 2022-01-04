@@ -22,13 +22,13 @@ public class PhotoService implements PhotoContract {
     }
 
     @Override
-    public PhotoEntity  findPhotoById(UUID id) {
+    public PhotoEntity findPhotoById(UUID id) {
         return findOrThrow(id);
     }
 
     @Override
     public void deletePhoto(UUID id) {
-      photoRepository.deleteById(id);
+        photoRepository.deleteById(id);
     }
 
     @Override

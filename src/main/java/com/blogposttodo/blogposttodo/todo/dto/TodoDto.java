@@ -1,4 +1,4 @@
-package com.blogposttodo.blogposttodo.config.todo.dto;
+package com.blogposttodo.blogposttodo.todo.dto;
 
 import com.blogposttodo.blogposttodo.user.entity.UserEntity;
 import com.fasterxml.jackson.annotation.JsonIdentityReference;

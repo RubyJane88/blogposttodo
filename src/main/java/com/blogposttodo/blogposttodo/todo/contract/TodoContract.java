@@ -1,6 +1,6 @@
-package com.blogposttodo.blogposttodo.config.todo.contract;
+package com.blogposttodo.blogposttodo.todo.contract;
 
-import com.blogposttodo.blogposttodo.config.todo.entity.TodoEntity;
+import com.blogposttodo.blogposttodo.todo.entity.TodoEntity;
 
 import java.util.UUID;
 

@@ -1,4 +1,4 @@
-package com.blogposttodo.blogposttodo.config.todo.entity;
+package com.blogposttodo.blogposttodo.todo.entity;
 
 import com.blogposttodo.blogposttodo.user.entity.AddressEntity;
 import com.blogposttodo.blogposttodo.user.entity.UserEntity;

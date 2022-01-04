@@ -57,8 +57,8 @@ public class CommentController {
 
     @PutMapping("/{id}")
     public void putComment(@PathVariable("id") UUID id, @Valid @RequestBody CommentDto commentDto) {
-       if(!id.equals(commentDto.getId())) throw new ResponseStatusException(
-               HttpStatus.BAD_REQUEST, "Id in path and id in body must be the same");
+        if (!id.equals(commentDto.getId())) throw new ResponseStatusException(
+                HttpStatus.BAD_REQUEST, "Id in path and id in body must be the same");
 
     }
 
@@ -70,7 +70,6 @@ public class CommentController {
     private CommentEntity convertToEntity(CommentDto commentDto) {
         return modelMapper.map(commentDto, CommentEntity.class);
     }
-
 
 
 }

@@ -24,6 +24,4 @@ public class CompanyEntity {
     private String bs;
 
 
-
-
 }

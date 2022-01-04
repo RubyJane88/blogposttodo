@@ -22,7 +22,6 @@ import java.util.stream.StreamSupport;
 @AllArgsConstructor
 @RestController
 @RequestMapping("api/v1/users")
-@PreAuthorize("isAuthenticated()") // for authorization
 public class UserController {
 
     private UserService userService;
@@ -30,13 +29,13 @@ public class UserController {
 
     @GetMapping
     public List<UserDto> getAllUsers() {
-          var userList = StreamSupport
-                  .stream(userService.findAllUser().spliterator(), false).toList();
+        var userList = StreamSupport
+                .stream(userService.findAllUser().spliterator(), false).toList();
 
-          return userList
-                  .stream()
-                  .map(this::convertToDto)
-                  .collect(Collectors.toList());
+        return userList
+                .stream()
+                .map(this::convertToDto)
+                .collect(Collectors.toList());
     }
 
     @GetMapping("/{id}")
@@ -44,27 +43,29 @@ public class UserController {
         return convertToDto(userService.findUserById(id));
     }
 
-     @DeleteMapping("/{id}")
-     public void deleteUser(@PathVariable("id") UUID id) {
-         userService.deleteUser(id);
-     }
+    @DeleteMapping("/{id}")
+    public void deleteUser(@PathVariable("id") UUID id) {
+        userService.deleteUser(id);
+    }
 
-     @PostMapping
-     public UserDto createUser(@Valid @RequestBody UserDto userDto) {
+    @PostMapping
+    public UserDto createUser(@Valid @RequestBody UserDto userDto) {
         var entity = convertToEntity(userDto);
-         var savedEntity = userService.createUser(entity);
-         return convertToDto(savedEntity);
-     }
+        var savedEntity = userService.createUser(entity);
+        return convertToDto(savedEntity);
+    }
 
-  @PutMapping("/{id}")
-  public void putUser (@PathVariable("id") UUID id, @Valid @RequestBody UserDto userDto) {
-        if (!id.equals(userDto.getId()))  throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Id in path and id in body must match");
+    @PutMapping("/{id}")
+    public void putUser(@PathVariable("id") UUID id, @Valid @RequestBody UserDto userDto) {
+        if (!id.equals(userDto.getId()))
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Id in path and id in body must match");
 
         var entity = convertToEntity(userDto);
         userService.updateUser(id, entity);
 
-  };
+    }
 
+    ;
 
 
     private UserDto convertToDto(UserEntity entity) {

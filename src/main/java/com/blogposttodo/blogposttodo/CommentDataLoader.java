@@ -29,7 +29,7 @@ public class CommentDataLoader implements CommandLineRunner {
     }
 
     private void loadCommentData() {
-        if(commentRepository.count() == 0) {
+        if (commentRepository.count() == 0) {
 
             var geo4 = new GeoEntity(UUID.randomUUID(), "39.742", "-122.446");
             var address = new AddressEntity(UUID.randomUUID(), "Kulasasi", "Apt 556", "Gwen borough", "92998-3874", "NY", geo4);

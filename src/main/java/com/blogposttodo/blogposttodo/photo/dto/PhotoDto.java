@@ -10,16 +10,14 @@ import java.util.UUID;
 @Getter
 @Setter
 public class PhotoDto {
-     private UUID id;
+    private UUID id;
 
-     @NotBlank(message = "Title is required")
-     private String title;
-     private String url;
-     private String thumbnailUrl;
+    @NotBlank(message = "Title is required")
+    private String title;
+    private String url;
+    private String thumbnailUrl;
 
-     private UUID albumId;
-
-
+    private UUID albumId;
 
 
 }

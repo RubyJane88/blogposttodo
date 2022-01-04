@@ -13,7 +13,7 @@ import java.util.UUID;
 @Service
 public class CommentService implements CommentContract {
 
-      private final CommentRepository commentRepository;
+    private final CommentRepository commentRepository;
 
     @Override
     public Iterable<CommentEntity> findAllComments() {
@@ -27,7 +27,7 @@ public class CommentService implements CommentContract {
 
     @Override
     public void deleteComment(UUID id) {
-       commentRepository.deleteById(id);
+        commentRepository.deleteById(id);
     }
 
     @Override

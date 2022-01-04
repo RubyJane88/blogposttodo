@@ -19,7 +19,6 @@ import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
 
-
 @Log4j2
 @AllArgsConstructor
 @RestController
@@ -40,10 +39,10 @@ public class PhotoController {
                 .map(this::convertToDto)
                 .collect(Collectors.toList());
 
-        }
+    }
 
     @GetMapping("/{id}")
-    public PhotoDto getPhotoById(@PathVariable("id") UUID id){
+    public PhotoDto getPhotoById(@PathVariable("id") UUID id) {
         return convertToDto(photoService.findPhotoById(id));
 
     }
@@ -72,8 +71,6 @@ public class PhotoController {
         var photoEntity = convertToEntity(photoDto);
         photoService.updatePhoto(id, photoEntity);
     }
-
-
 
 
     private PhotoDto convertToDto(PhotoEntity photoEntity) {

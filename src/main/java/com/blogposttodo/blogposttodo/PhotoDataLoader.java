@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 import java.util.UUID;
 
 @Component
-public class PhotoDataLoader  implements CommandLineRunner {
+public class PhotoDataLoader implements CommandLineRunner {
 
     final PhotoRepository photoRepository;
 
@@ -32,7 +32,7 @@ public class PhotoDataLoader  implements CommandLineRunner {
         if (photoRepository.count() == 0) {
 
 
-            var geo2 = new GeoEntity(UUID.randomUUID(),"37.762", "-122.446");
+            var geo2 = new GeoEntity(UUID.randomUUID(), "37.762", "-122.446");
             var address = new AddressEntity(UUID.randomUUID(), "Kulasa", "Apt 556", "Gwen borough", "92998-3874", "NY", geo2);
             var company = new CompanyEntity(UUID.randomUUID(), "Demagoguery-Cron2", "Multi-layered client-server neural-net2", "1-660-555-8808");
 

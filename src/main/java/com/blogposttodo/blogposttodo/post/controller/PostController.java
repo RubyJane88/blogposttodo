@@ -49,17 +49,18 @@ public class PostController {
     }
 
     @PostMapping
-    public PostDto createPost (@Valid @RequestBody PostDto postDto) {
+    public PostDto createPost(@Valid @RequestBody PostDto postDto) {
         var postEntity = convertToEntity(postDto);
         return convertToDto(postService.createPost(postEntity));
     }
 
     @PutMapping("/{id}")
-    public void putPost (@PathVariable("id") UUID id, @Valid @RequestBody PostDto postDto) {
-       if(!id.equals(postDto.getId())) throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Id in path and id in body must match");
+    public void putPost(@PathVariable("id") UUID id, @Valid @RequestBody PostDto postDto) {
+        if (!id.equals(postDto.getId()))
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Id in path and id in body must match");
 
-       var postEntity = convertToEntity(postDto);
-       postService.updatePost(id, postEntity);
+        var postEntity = convertToEntity(postDto);
+        postService.updatePost(id, postEntity);
     }
 
 

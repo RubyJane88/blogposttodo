@@ -1,22 +1,28 @@
-#Steps:
+# Steps:
 
-##Project Starter:
+## Project Starter:
 
-- 1. Check first in terminal first your Java version. $ java -version
-- 2. ATM latest is Java version 17.0.1
-- 3. Navigate to Spring Initializr and create a new Spring Boot project.
-- 4. Choose Spring 2.6.0.RELEASE and Java 17 and Maven
-- 5. Add the following dependencies:
+-
+    1. Check first in terminal first your Java version. $ java -version
+-
+    2. ATM latest is Java version 17.0.1
+-
+    3. Navigate to Spring Initializr and create a new Spring Boot project.
+-
+    4. Choose Spring 2.6.0.RELEASE and Java 17 and Maven
+-
+    5. Add the following dependencies:
 
-  - Spring Boot DevTools,
-  - Lombok,
-  - Spring Web,
-  - Rest Repositories,
-  - Spring Security,
-  - Spring Data JPA,
-  - H2 Database,
-  - PostgresSQL Driver
-- 6. Download the project and open in your IDE.
+    - Spring Boot DevTools,
+    - Lombok,
+    - Spring Web,
+    - Rest Repositories,
+    - Spring Security,
+    - Spring Data JPA,
+    - H2 Database,
+    - PostgresSQL Driver
+-
+    6. Download the project and open in your IDE.
 
 #### POM.XML FILE
 
@@ -30,48 +36,46 @@ Ex:
 <version>2.4.0-b180830.0359</version>
 </dependency>
 
-2. Add the spring-boot-starter-validation under the dependencies in the poml.xml file.
-   Ex:   <!--Spring Boot-->
+2. Add the spring-boot-starter-validation under the dependencies in the poml.xml file. Ex:   <!--Spring Boot-->
    <dependency>
    <groupId>org.springframework.boot</groupId>
    <artifactId>spring-boot-starter-validation</artifactId>
    </dependency>
 
-####Creating Packages
+#### Creating Packages
+
 NOTE: com.blogposttodo.blogposttodo is the name of the project.
 
-1. Inside the project (see NOTE),  create a new package and name it user
-   ex: com.blogposttodo.blogposttodo.user
+1. Inside the project (see NOTE), create a new package and name it user ex: com.blogposttodo.blogposttodo.user
 2. Inside the com.blogposttodo.blogposttodo.user package, create the ff 6 packages:
    controller, service, repository, dto, entity, contract.
-   ####Creating User Entities
+   #### Creating User Entities
 
 - Under the entity package, create a new file and name it UserEntity.java.
 
-####Creating User DTO
+#### Creating User DTO
 
 - Under the dto package, create a new file and name it UserDTO.java.
 
-####Creating User Contract
+#### Creating User Contract
 
 - Under the contract package, create a new file and name it UserContract.java.
 
-####Creating User Repository
+#### Creating User Repository
 
 - Under the repository package, create a new file and name it UserRepository.java.
 
-####Creating Exception Package
+#### Creating Exception Package
 
 - Under the exception package, create a new file and name it NotFoundException.java.
 - Inside the NotFoundException.java file, create the following code:
 
-public class NotFoundException extends RuntimeException {
-public NotFoundException(String message) { super(message); } }
+public class NotFoundException extends RuntimeException { public NotFoundException(String message) { super(message); } }
 
 #### Creating User Service
 
 - Under the service package, create a new file and name it UserService.java.
-  ####Adding ModelMapper and MapStruct dependencies (one-time setup)
+  #### Adding ModelMapper and MapStruct dependencies (one-time setup)
 - Inside the pom.xml file, add the following dependencies:
 - ModelMapper,
 - MapStruct
@@ -79,7 +83,7 @@ public NotFoundException(String message) { super(message); } }
 #### Adding Logging Package (one-time setup)
 
 - Inside the pom.xml file, add the following dependencies:
-  - Spring Boot Started log4js
+    - Spring Boot Started log4js
 
 #### Adding Log4js2-spring.xml in the main/resource folder
 
@@ -102,11 +106,11 @@ app.clientUrl=${CLIENT_URL}
 #### Adding Configurations (no-user and no-auth yet)
 
 - Inside the pom.xml file, add the following dependencies:
-  - Spring Boot Configuration processor
+    - Spring Boot Configuration processor
 
 #### Creating a config package:
 
-- Inside the project (see NOTE),  create a new package and name it config
+- Inside the project (see NOTE), create a new package and name it config
 
 #### Adding files in the config package:
 
@@ -119,13 +123,14 @@ app.clientUrl=${CLIENT_URL}
 
 - Create a new package inside the project and name it: UserController.java.
 
-###RUN the application to check if you've successfully sending the endpoint. In the localhost, an empty array should appear
+### RUN the application to check if you've successfully sending the endpoint. In the localhost, an empty array should appear
 
 since we don't have data yet.
 
 #### Connecting to Postgres
 
-- For now, we comment out the h2 file in the application.properties since we alreayd a POF when we're able to send an endpoint.
+- For now, we comment out the h2 file in the application.properties since we alreayd a POF when we're able to send an
+  endpoint.
 - In the application.xml, copy the text below:
 
 ```
@@ -146,7 +151,8 @@ spring.jpa.properties.hibernate.format_sql=true
 
 NOTE:
 
-Navigate to -> Run -> EditConfigurations -> Click on $ of Working Directory and browse to your root package or working directory of your app.
+Navigate to -> Run -> EditConfigurations -> Click on $ of Working Directory and browse to your root package or working
+directory of your app.
 
 Make sure your Docker client is running.
 
@@ -179,12 +185,13 @@ app.name=SuperheroesApplication
 app.description=just another Spring Boot REST API application
 ```
 
-- Inside the Test package -> and inside your root project test package, create a new package and name it user. (test/java/com.blogposttodo.blogposttodo/user)
+- Inside the Test package -> and inside your root project test package, create a new package and name it user. (
+  test/java/com.blogposttodo.blogposttodo/user)
 - Inside the user package -> create two folders: controller and service
 - In the controller -> add a new file and name it userControllerTest
 - In the service -> add a new file and name it userServiceTest
 
-###REST-Client for Postman/Insomnia replacement
+### REST-Client for Postman/Insomnia replacement
 
 - Create REST-Client folder in the root directory
 - Add user.http file
@@ -193,7 +200,7 @@ app.description=just another Spring Boot REST API application
 - send/trigger POST http://localhost:8080/api/v1/users
 - send/trigger PUT http://localhost:8080/api/v1/users/{id}
 
-##SWAGGER UI or OPEN API
+## SWAGGER UI or OPEN API
 
 Add springdoc-openapi-ui and springdoc-openapi-data-rest in the pom.xml
 
@@ -207,18 +214,17 @@ Run the app and then go to this link:
 
 In the Edit Configugations:
 
-###USER LOGIN
+### USER LOGIN
 
 _ Create a new package named userlogin in the com.blogposttodo.blogposttodo
 
 _ Inside the userlogin package, create the following packges: entity, dto, repository, service, controller
 
-###JWT
+### JWT
 
 _ Create a jwt package under the .comblogposttodo.blogposttodo
 
 _ Create a models package under the jwt
-
 
 * write UserPrincipal class, jwt/models/UserPrincipal.java
 * write AuthenticationRequest class, jwt/models/AuthenticationRequest.java
@@ -385,9 +391,11 @@ _ Create a models package under the jwt
 * run the application
 * send POST [http://localhost:8080/register](http://localhost:8080/register)
 * send POST [http://localhost:8080/authenticate](http://localhost:8080/authenticate)
-* send GET [http://localhost:8080/api/v1/login](http://localhost:8080/api/v1/userslogin, [] empty array should be the response
+* send GET [http://localhost:8080/api/v1/login](http://localhost:8080/api/v1/userslogin, [] empty array should be the
+  response
 * send POST [http://localhost:8080/api/v1/users](http://localhost:8080/api/v1/anti-heroes)
-* send GET [http://localhost:8080/api/v1/users](http://localhost:8080/api/v1/anti-heroes), [{...}] should be the response
+* send GET [http://localhost:8080/api/v1/users](http://localhost:8080/api/v1/anti-heroes), [{...}] should be the
+  response
 * send PUT [http://localhost:8080/api/v1/users/{:id}](http://localhost:8080/api/v1/anti-heroes/%7B:id%7D)
 * full crud should be working
 * [https://www.mockaroo.com](https://www.mockaroo.com/) to generate SQL queries

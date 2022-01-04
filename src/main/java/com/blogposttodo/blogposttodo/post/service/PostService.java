@@ -28,12 +28,12 @@ public class PostService implements PostContract {
 
     @Override
     public void deletePostById(UUID id) {
-       postRepository.deleteById(id);
+        postRepository.deleteById(id);
     }
 
     @Override
     public PostEntity createPost(PostEntity photo) {
-         return postRepository.save(photo);
+        return postRepository.save(photo);
     }
 
     @Override

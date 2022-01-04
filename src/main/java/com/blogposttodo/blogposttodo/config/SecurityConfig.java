@@ -1,7 +1,5 @@
 package com.blogposttodo.blogposttodo.config;
 
-import com.blogposttodo.blogposttodo.jwt.filters.JwtRequestFilter;
-import com.blogposttodo.blogposttodo.jwt.services.ApplicationUserDetailsService;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,12 +14,6 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 @Configuration
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-
-    private final ApplicationUserDetailsService userDetailsService;
-    private final JwtRequestFilter jwtRequestFilter;
-
-
-
 
     @Bean(name = BeanIds.AUTHENTICATION_MANAGER)
     @Override

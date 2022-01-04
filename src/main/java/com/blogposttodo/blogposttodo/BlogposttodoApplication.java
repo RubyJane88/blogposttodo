@@ -8,9 +8,9 @@ import org.springframework.cache.annotation.EnableCaching;
 @SpringBootApplication
 public class BlogposttodoApplication {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		SpringApplication.run(BlogposttodoApplication.class, args);
-	}
+        SpringApplication.run(BlogposttodoApplication.class, args);
+    }
 
 }

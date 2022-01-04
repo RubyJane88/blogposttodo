@@ -18,5 +18,4 @@ public interface CommentContract {
     void updateComment(UUID id, CommentEntity comment);
 
 
-
 }

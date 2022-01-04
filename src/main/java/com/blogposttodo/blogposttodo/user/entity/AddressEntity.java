@@ -28,8 +28,7 @@ public class AddressEntity {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "geo_id", referencedColumnName = "id")
-   private  GeoEntity geo;
-
+    private GeoEntity geo;
 
 
 }

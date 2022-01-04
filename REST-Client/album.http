@@ -11,10 +11,10 @@ POST http://localhost:8080/api/v1/albums
 Content-Type: application/json
 accept: application/json
 
- {
-    "title": "Something's Gotta Give",
-   "userId": "d9abcd14-4295-45f0-bbbc-ae93005fb19e"
-  }
+{
+  "title": "Something's Gotta Give",
+  "userId": "d9abcd14-4295-45f0-bbbc-ae93005fb19e"
+}
 
 ###
 PUT http://localhost:8080/api/v1/albums/a4a5d2c2-59da-4403-b5b7-67881f9f5996

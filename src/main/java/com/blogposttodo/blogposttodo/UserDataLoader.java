@@ -29,7 +29,7 @@ public class UserDataLoader implements CommandLineRunner {
         if (userRepository.count() == 0) {
 
             var geo = new GeoEntity(UUID.randomUUID(), "37.769", "-122.446");
-            var address = new AddressEntity(UUID.randomUUID(),"Kulas", "Apt 556", "Gwenborough", "92998-3874", "NY", geo);
+            var address = new AddressEntity(UUID.randomUUID(), "Kulas", "Apt 556", "Gwenborough", "92998-3874", "NY", geo);
             var company = new CompanyEntity(UUID.randomUUID(), "Romaguera-Crona", "Multi-layered client-server neural-net", "1-660-555-8888");
 
             var user = new UserEntity(UUID.randomUUID(), "Leane", "Bret", "since@gmail.com", address, company, "123456789", "yahoo.com");

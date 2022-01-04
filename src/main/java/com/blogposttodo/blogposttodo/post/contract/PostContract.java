@@ -14,6 +14,6 @@ public interface PostContract {
 
     PostEntity createPost(PostEntity photo);
 
-    void updatePost( UUID id, PostEntity photo);
+    void updatePost(UUID id, PostEntity photo);
 
 }

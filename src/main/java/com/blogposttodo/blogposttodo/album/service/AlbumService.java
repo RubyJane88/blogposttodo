@@ -21,7 +21,7 @@ public class AlbumService implements AlbumContract {
 
     @Override
     public AlbumEntity findAlbumById(UUID id) {
-        return  findOrThrow(id);
+        return findOrThrow(id);
     }
 
     private AlbumEntity findOrThrow(final UUID id) {
@@ -36,12 +36,12 @@ public class AlbumService implements AlbumContract {
 
     @Override
     public void deleteAlbum(UUID id) {
-     albumRepository.deleteById(id);
+        albumRepository.deleteById(id);
     }
 
     @Override
     public void updateAlbum(UUID id, AlbumEntity albumEntity) {
-      findOrThrow(id);
-      albumRepository.save(albumEntity);
+        findOrThrow(id);
+        albumRepository.save(albumEntity);
     }
 }

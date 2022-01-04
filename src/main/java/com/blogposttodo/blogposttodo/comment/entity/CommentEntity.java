@@ -42,5 +42,4 @@ public class CommentEntity {
     private PostEntity post;
 
 
-
 }

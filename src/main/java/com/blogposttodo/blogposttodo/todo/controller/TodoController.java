@@ -1,9 +1,9 @@
 package com.blogposttodo.blogposttodo.todo.controller;
 
 
-import com.blogposttodo.blogposttodo.config.todo.dto.TodoDto;
-import com.blogposttodo.blogposttodo.config.todo.entity.TodoEntity;
-import com.blogposttodo.blogposttodo.config.todo.service.TodoService;
+import com.blogposttodo.blogposttodo.todo.dto.TodoDto;
+import com.blogposttodo.blogposttodo.todo.entity.TodoEntity;
+import com.blogposttodo.blogposttodo.todo.service.TodoService;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.modelmapper.ModelMapper;

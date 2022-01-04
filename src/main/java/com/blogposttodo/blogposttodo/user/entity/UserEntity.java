@@ -37,11 +37,11 @@ public class UserEntity {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "company_id", referencedColumnName = "id")
-   private CompanyEntity company;
+    private CompanyEntity company;
 
-   @NotBlank(message = "Phone cannot be blank")
-   private String phone;
-   private String website;
+    @NotBlank(message = "Phone cannot be blank")
+    private String phone;
+    private String website;
 
 
     @Override

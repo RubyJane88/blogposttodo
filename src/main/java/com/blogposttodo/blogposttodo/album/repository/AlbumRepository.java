@@ -8,6 +8,6 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import java.util.UUID;
 
 @RepositoryRestResource
-public interface AlbumRepository  extends CrudRepository<AlbumEntity, UUID> {
+public interface AlbumRepository extends CrudRepository<AlbumEntity, UUID> {
 
 }

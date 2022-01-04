@@ -15,7 +15,6 @@ accept: application/json
   "title": "Post 1.5",
   "body": "This is the body of the Fourth Post 1.12",
   "userId": "b094e30c-5db7-4f02-86f0-943c2d317f99"
-
 }
 
 ###
