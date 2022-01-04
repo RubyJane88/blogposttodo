@@ -33,14 +33,13 @@ public class TodoControllerTest {
 
     @BeforeEach()
     public void setUp() throws IOException {
-//      todosFixture = MockData.getTodos();
+      todosFixture = MockData.getTodos();
     }
 
     @Test
     void getAllTodos() throws Exception {
-//      given(todoService.findAllTodos()).willReturn(todosFixture);
-//
-//      mockMvc.perform(get("/api/v1/todos")).andExpect(status().isOk());
+      given(todoService.findAllTodos()).willReturn(todosFixture);
+      mockMvc.perform(get("/api/v1/todos")).andExpect(status().isOk());
     }
 }
 

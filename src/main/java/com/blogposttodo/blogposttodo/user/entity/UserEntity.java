@@ -12,10 +12,13 @@ import java.util.UUID;
 @Getter
 @Setter
 @ToString
-@RequiredArgsConstructor
+/*the above decorators are equivalent of this @Data,
+ and they don't slow down JPA*/
+//@Data
 @Table(name = "users")
 @Entity(name = "user")
 @AllArgsConstructor
+@NoArgsConstructor
 public class UserEntity {
 
     @Id
